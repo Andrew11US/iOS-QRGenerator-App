@@ -50,11 +50,14 @@ class GeneratorVC: UIViewController {
             qrcodeImage = nil
             btnAction.setTitle("Generate", for: [.normal])
         }
+        
+//        textField.isEnabled = !textField.isEnabled
+//        slider.isHidden = !slider.isHidden
     }
     
     
     @IBAction func changeImageViewScale(sender: AnyObject) {
-        
+        imgQRCode.transform = CGAffineTransform(scaleX: CGFloat(slider.value), y: CGFloat(slider.value))
     }
     
     func displayQRCodeImage() {
