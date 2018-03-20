@@ -38,14 +38,32 @@ class GeneratorVC: UIViewController {
             
             qrcodeImage = filter?.outputImage
             
-            imgQRCode.image = UIImage(ciImage: qrcodeImage)
+//            imgQRCode.image = UIImage(ciImage: qrcodeImage)
+            displayQRCodeImage()
             
             textField.resignFirstResponder()
+            
+            btnAction.setTitle("Clear", for: .normal)
+            slider.isHidden = false
+        } else {
+            imgQRCode.image = nil
+            qrcodeImage = nil
+            btnAction.setTitle("Generate", for: [.normal])
         }
     }
     
     
     @IBAction func changeImageViewScale(sender: AnyObject) {
+        
+    }
+    
+    func displayQRCodeImage() {
+        let scaleX = imgQRCode.frame.size.width / qrcodeImage.extent.size.width
+        let scaleY = imgQRCode.frame.size.height / qrcodeImage.extent.size.height
+        
+        let transformedImage = qrcodeImage.transformed(by: CGAffineTransform(scaleX: scaleX, y: scaleY))
+        
+        imgQRCode.image = UIImage(ciImage: transformedImage)
         
     }
 
