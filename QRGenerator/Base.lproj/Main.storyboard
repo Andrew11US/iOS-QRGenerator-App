@@ -50,6 +50,16 @@
                                     <segue destination="NUo-cb-26Y" kind="show" id="8O3-qc-S1n"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvL-zl-hJc">
+                                <rect key="frame" x="308" y="617" width="51" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Switch">
+                                    <color key="titleColor" red="0.90588235289999997" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="O0P-u3-6gW" kind="presentation" id="RoD-Be-zIZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -57,6 +67,8 @@
                             <constraint firstItem="yTm-AC-JOP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KT4-LZ-9sf"/>
                             <constraint firstItem="yTm-AC-JOP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="mKO-BQ-ZgL"/>
                             <constraint firstItem="Di1-ZK-XVv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="plh-I7-dGQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QvL-zl-hJc" secondAttribute="bottom" constant="20" id="q8Y-t9-rmP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QvL-zl-hJc" secondAttribute="trailing" constant="16" id="yoY-hu-Vdd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -69,6 +81,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--GeneratorVC-->
+        <scene sceneID="5CH-Bh-y9Q">
+            <objects>
+                <viewController id="O0P-u3-6gW" customClass="GeneratorVC" customModule="QRGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GtA-gL-RJ2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eI-88-XJd">
+                                <rect key="frame" x="16" y="20" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="Az9-9E-kzS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84O-rr-kl7">
+                                <rect key="frame" x="164" y="200" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="performButtonActionWithSender:" destination="O0P-u3-6gW" eventType="touchUpInside" id="SOD-9d-d2v"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qdg-uz-vxi">
+                                <rect key="frame" x="77" y="80" width="221" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KK2-QY-HNz">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="30R-6Y-sbj"/>
+                                    <constraint firstAttribute="width" constant="200" id="Hqt-eW-giK"/>
+                                </constraints>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="HSl-ZU-9oS">
+                                <rect key="frame" x="18" y="140" width="339" height="31"/>
+                                <connections>
+                                    <action selector="changeImageViewScaleWithSender:" destination="O0P-u3-6gW" eventType="valueChanged" id="iw8-IC-hrZ"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KK2-QY-HNz" firstAttribute="centerY" secondItem="GtA-gL-RJ2" secondAttribute="centerY" id="8YG-og-90M"/>
+                            <constraint firstItem="5eI-88-XJd" firstAttribute="top" secondItem="vLO-lV-5Tk" secondAttribute="top" id="EeT-X9-Czs"/>
+                            <constraint firstItem="HSl-ZU-9oS" firstAttribute="leading" secondItem="vLO-lV-5Tk" secondAttribute="leading" constant="20" id="IQT-VS-OdH"/>
+                            <constraint firstItem="vLO-lV-5Tk" firstAttribute="trailing" secondItem="HSl-ZU-9oS" secondAttribute="trailing" constant="20" id="RjG-pV-GQe"/>
+                            <constraint firstItem="HSl-ZU-9oS" firstAttribute="top" secondItem="Qdg-uz-vxi" secondAttribute="bottom" constant="30" id="eGi-XB-rhE"/>
+                            <constraint firstItem="Qdg-uz-vxi" firstAttribute="centerX" secondItem="GtA-gL-RJ2" secondAttribute="centerX" id="f22-AT-Hq1"/>
+                            <constraint firstItem="84O-rr-kl7" firstAttribute="centerX" secondItem="GtA-gL-RJ2" secondAttribute="centerX" id="kD8-Cd-nYG"/>
+                            <constraint firstItem="Qdg-uz-vxi" firstAttribute="top" secondItem="vLO-lV-5Tk" secondAttribute="top" constant="60" id="oUc-U9-8kZ"/>
+                            <constraint firstItem="84O-rr-kl7" firstAttribute="top" secondItem="HSl-ZU-9oS" secondAttribute="bottom" constant="30" id="p0c-PN-4KI"/>
+                            <constraint firstItem="KK2-QY-HNz" firstAttribute="centerX" secondItem="GtA-gL-RJ2" secondAttribute="centerX" id="pal-OE-MaS"/>
+                            <constraint firstItem="vLO-lV-5Tk" firstAttribute="trailing" secondItem="Qdg-uz-vxi" secondAttribute="trailing" constant="77" id="t0a-Nw-MYm"/>
+                            <constraint firstItem="5eI-88-XJd" firstAttribute="leading" secondItem="vLO-lV-5Tk" secondAttribute="leading" constant="16" id="tqZ-Hb-wnv"/>
+                            <constraint firstItem="Qdg-uz-vxi" firstAttribute="leading" secondItem="vLO-lV-5Tk" secondAttribute="leading" constant="77" id="zsA-K7-YK4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vLO-lV-5Tk"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnAction" destination="84O-rr-kl7" id="UVD-rf-jKK"/>
+                        <outlet property="imgQRCode" destination="KK2-QY-HNz" id="pUy-9f-2Q6"/>
+                        <outlet property="slider" destination="HSl-ZU-9oS" id="GYh-ny-xpG"/>
+                        <outlet property="textField" destination="Qdg-uz-vxi" id="8Jx-hN-fxl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLf-td-Ork" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000.8" y="934.18290854572717"/>
         </scene>
         <!--ScannerVC-->
         <scene sceneID="3Wl-pt-z12">
